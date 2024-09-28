@@ -1,30 +1,46 @@
-<div class="border h-[50%] p-5">
+<div class="flex flex-col p-5 h-screen">
+  <!-- <div class="mb-4">
+    <h2 class="text-lg font-bold">Título da Lista</h2>
+  </div> -->
 
-  <div class="flex justify-between items-center">
-    <div class="flex space-x-2 items-center justify-center">
-      <div class="w-7 h-7 bg-black rounded-full"></div>
-      <span class="text-black text-sm">{{name}}</span>
-      <div class="w-1 h-1 bg-gray-700 rounded-full"></div>
-      <span class=" text-xs text-gray-600">{{datePost}}</span>
-    </div>
+  <div class="overflow-y-auto scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-300 scrollbar-none">
+    <div *ngFor="let listItem of listInformation">
+      <div class="flex justify-between items-center">
+        <div class="flex space-x-2 items-center justify-center">
+          <div class="w-7 h-7 bg-black rounded-full"></div>
+          <span class="text-black text-sm">{{listItem.name}}</span>
+          <div class="w-1 h-1 bg-gray-700 rounded-full"></div>
+          <span class="text-xs text-gray-600">{{listItem.datePost}}</span>
+        </div>
 
-    <button class="flex items-center">
-      <div class="w-20 h-6 rounded-full bg-primary-color mr-2 items-center justify-center flex ">
-        <span class="text-white text-xs mr-1">Follow</span>
-        <i class="fa-solid fa-plus text-white text-sm"></i>
+        <button class="flex items-center">
+          <div class="w-20 h-6 rounded-full bg-primary-color mr-2 items-center justify-center flex">
+            <span class="text-white text-xs mr-1">Follow</span>
+            <i class="fa-solid fa-plus text-white text-sm"></i>
+          </div>
+          <div class="w-1 h-1 rounded-full bg-gray-400 mr-1"></div>
+          <div class="w-1 h-1 rounded-full bg-gray-400 mr-1"></div>
+          <div class="w-1 h-1 rounded-full bg-gray-400 mr-1"></div>
+        </button>
       </div>
-      <div class="w-1 h-1 rounded-full bg-gray-400 mr-1 "></div>
-      <div class="w-1 h-1 rounded-full bg-gray-400 mr-1"></div>
-      <div class="w-1 h-1 rounded-full bg-gray-400 mr-1"></div>
-    </button>
-  </div>
 
-  <div class="w-full h-40 border mt-4 p-3">Postagem</div>
+      <div class="w-full mt-4 p-3">
+        <app-poll></app-poll>
+        {{listItem.information}}
+      </div>
 
-  <div class="flex items-center mt-1">
-    <div class="w-16 h-5 rounded-full border mr-1 "></div>
-    <div class="w-16 h-5 rounded-full border mr-1 "></div>
-    <div class="w-16 h-5 rounded-full border mr-1 "></div>
-    <div class="w-16 h-5 rounded-full border mr-1 "></div>
+      <div class="flex flex-col ">
+        <div class="flex ">
+          <div class="w-16 h-5 rounded-full border mr-1"></div>
+          <div class="w-16 h-5 rounded-full border mr-1"></div>
+          <div class="w-16 h-5 rounded-full border mr-1"></div>
+          <div class="w-16 h-5 rounded-full border mr-1"></div>
+
+        </div>
+        <div class="flex  border w-[70%] mb-5 mt-5"></div>
+
+      </div>
+
+    </div>
   </div>
 </div>

@@ -1,0 +1,16 @@
+<div class="poll-container p-4">
+  <h2 class="text-lg font-bold mb-4">Vote no seu esporte favorito!</h2>
+
+  <div class="mb-4">
+    <label class="block text-gray-700 text-sm">Escolha um esporte:</label>
+
+    <div class="flex mt-1">
+      <div *ngFor="let sport of sports; let i = index" class="flex items-center mr-4">
+        <input type="checkbox" id="{{sport}}" (change)="onVoteChange(i, $event)" class="mr-2" />
+        <label for="{{sport}}" class="text-sm text-gray-700">{{ sport }}</label>
+      </div>
+    </div>
+  </div>
+
+  <canvas id="pollChart" width="300" height="150" class="max-w-full"></canvas>
+</div>
